@@ -9,6 +9,12 @@ load(
     "envoy_package",
 )
 
+load(
+    "@rules_python//python:defs.bzl",
+    "py_binary",
+    "py_library",
+)
+
 envoy_package()
 
 envoy_cc_library(
@@ -153,6 +159,7 @@ py_binary(
         ":kafka_protocol_generator_lib",
         "@com_github_pallets_jinja//:jinja2",
     ],
+    python_version = "PY2",
 )
 
 py_library(
@@ -208,6 +215,7 @@ py_binary(
         ":serialization_composite_generator_lib",
         "@com_github_pallets_jinja//:jinja2",
     ],
+    python_version = "PY2",
 )
 
 py_library(
